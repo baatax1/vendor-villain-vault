@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,7 +62,29 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				hellfire: {
+					50: '#fff1f0',
+					100: '#ffe0de',
+					200: '#ffc7c3',
+					300: '#ffa199',
+					400: '#ff6b5b',
+					500: '#ff3d28',
+					600: '#ed1c08',
+					700: '#c81407',
+					800: '#a4140b',
+					900: '#87160d',
+					950: '#4a0700',
+				},
+				brimstone: {
+					900: '#1A1F2C',
+					800: '#221F26',
+					700: '#403E43',
+					600: '#333333',
 				}
+			},
+			backgroundImage: {
+				'hellish-gradient': 'linear-gradient(145deg, #1A1F2C 0%, #221F26 35%, #4a0700 100%)',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -70,25 +93,39 @@ export default {
 			},
 			keyframes: {
 				'accordion-down': {
-					from: {
-						height: '0'
-					},
-					to: {
-						height: 'var(--radix-accordion-content-height)'
-					}
+					from: { height: '0' },
+					to: { height: 'var(--radix-accordion-content-height)' },
 				},
 				'accordion-up': {
-					from: {
-						height: 'var(--radix-accordion-content-height)'
+					from: { height: 'var(--radix-accordion-content-height)' },
+					to: { height: '0' },
+				},
+				'pulse-fire': {
+					'0%, 100%': {
+						opacity: '1',
+						filter: 'brightness(1)',
 					},
-					to: {
-						height: '0'
-					}
-				}
+					'50%': {
+						opacity: '0.85',
+						filter: 'brightness(1.2)',
+					},
+				},
+				'flicker': {
+					'0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100%': {
+						opacity: '.99',
+						filter: 'brightness(1)',
+					},
+					'20%, 21.999%, 63%, 63.999%, 65%, 69.999%': {
+						opacity: '0.4',
+						filter: 'brightness(0.8)',
+					},
+				},
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'pulse-fire': 'pulse-fire 4s ease-in-out infinite',
+				'flicker': 'flicker 6s infinite alternate',
 			}
 		}
 	},
